@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import './screens/categories_screen.dart';
+// import './screens/categories_screen.dart';
 import './screens/category_meals_screen.dart';
 import './screens/meal_detail_screen.dart';
+import './screens/tabs_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,33 +37,33 @@ class MyApp extends StatelessWidget {
       // home: CategoriesScreen(),
       initialRoute: '/',
       routes: {
-        '/': (ctx) => CategoriesScreen(),
+        '/': (ctx) => TabsScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
       },
-      onGenerateRoute: (settings) {
-        print(settings.arguments);
-        switch (settings.name) {
-          case '/meal-detail':
-            return MaterialPageRoute(
-              builder: (ctx) => CategoriesScreen(),
-            );
-            break;
-          case '/something-else':
-            return MaterialPageRoute(
-              builder: (ctx) => CategoriesScreen(),
-            );
-          default:
-            return MaterialPageRoute(
-              builder: (ctx) => CategoriesScreen(),
-            );
-        }
-      },
-      onUnknownRoute: (settings) {
-        return MaterialPageRoute(
-          builder: (ctx) => CategoriesScreen(), // error screen 404
-        );
-      },
+      // onGenerateRoute: (settings) {
+      //   print(settings.arguments);
+      //   switch (settings.name) {
+      //     case '/meal-detail':
+      //       return MaterialPageRoute(
+      //         builder: (ctx) => CategoriesScreen(),
+      //       );
+      //       break;
+      //     case '/something-else':
+      //       return MaterialPageRoute(
+      //         builder: (ctx) => CategoriesScreen(),
+      //       );
+      //     default:
+      //       return MaterialPageRoute(
+      //         builder: (ctx) => CategoriesScreen(),
+      //       );
+      //   }
+      // },
+      // onUnknownRoute: (settings) {
+      //   return MaterialPageRoute(
+      //     builder: (ctx) => CategoriesScreen(), // error screen 404
+      //   );
+      // },
     );
   }
 }
